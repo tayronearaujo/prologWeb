@@ -9,6 +9,10 @@
 
 :- use_module(library(http/http_json)).
 
+user:file_search_path(dicionario, './bootstrap').
+% user:file_search_path(base, dicionario('base')).
+
+
 /* Aumenta a lista de tipos aceitos pelo servidor */
 :- multifile http_json/1.
 
@@ -24,7 +28,7 @@ servidor(Porta) :-
 :- initialization( servidor(8080) ).
 
 % Front-end
-user:file_search_path(frontend,  './front-end').
+user:file_search_path(frontend,  './frontEnd').
 
 % Backend
 user:file_search_path(backend,  './db').
@@ -34,8 +38,10 @@ user:file_search_path(db, backend(db)).
 
 
 :- load_files([
-                base(bootstrap),
-                frontend(index),
+                servidor
+                dicionario(bootstrap),
+                frontend(index)
               ],
 	          [ silent(true)
 	          ]).
+
