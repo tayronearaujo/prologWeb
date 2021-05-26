@@ -9,10 +9,6 @@
 
 :- use_module(library(http/http_json)).
 
-user:file_search_path(dicionario, './bootstrap').
-% user:file_search_path(base, dicionario('base')).
-
-
 /* Aumenta a lista de tipos aceitos pelo servidor */
 :- multifile http_json/1.
 
@@ -36,6 +32,7 @@ user:file_search_path(backend,  './db').
 % Banco de dados
 user:file_search_path(db, backend(db)).
 
+user:file_search_path(dicionario, './bootstrap').
 
 :- load_files([
                 servidor
