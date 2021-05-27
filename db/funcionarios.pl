@@ -15,9 +15,7 @@ funcionarios(numfunc: integer,
       adimissao: date(Date),
       carteiraTrabalho: integer,
       ferias: date,
-      horario: integer,
+      horario: integer).
 
-      ).
-
-:- initialization( ( db_attach('./backend/db/tbl_funcionarios.pl', []),
+:- initialization( ( db_attach('../db/tbl_funcionarios.pl', []),
                  at_halt(db_sync(gc(always))) )).

@@ -11,8 +11,9 @@
 
 % Esquema da relação fluxoDeCaixa
 :- persistent
-fluxoDeCaixa(numeroTransacao: integer,
-      valor:float).
+fluxoDeCaixa(
+              numeroTransacao: integer,
+              valor:float).
 
-:- initialization( ( db_attach('./db/tbl_fluxoDeCaixa.pl', []),
+:- initialization( ( db_attach('tbl_fluxoDeCaixa.pl', []),
                at_halt(db_sync(gc(always))) )).

@@ -35,7 +35,7 @@ user:file_search_path(db, backend(db)).
 user:file_search_path(dicionario, './bootstrap').
 
 :- load_files([
-                servidor
+                servidor,
                 dicionario(bootstrap),
                 frontend(index)
               ],
