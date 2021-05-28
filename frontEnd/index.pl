@@ -6,7 +6,7 @@
 index(_) :-
   reply_html_page(
     bootstrap,
-    [title('Login')],
+    [title('teste')],
     [
       \content
     ]
