@@ -1,0 +1,10 @@
+created(1602299502.3816576).
+assert(fornecedor(13,13,'4564','654654',asdfa,sdfasdfasd,'654654',asdf,asdf,asdfasd)).
+assert(fornecedor(14,14,'Teste1','Teste1','Teste1','Teste1','Teste1','Teste1','Teste1','Teste1')).
+assert(fornecedor(15,15,'Teste2','Teste2','Teste2','Teste2','Teste2','Teste2','Teste2','Teste2')).
+assert(fornecedor(16,16,'Teste3','Teste3','Teste3','Teste3','Teste3','Teste3','Teste3','Teste3')).
+assert(fornecedor(17,17,'Teste4','Teste4','Teste4','Teste4','Teste4','Teste4','Teste4','Teste4')).
+assert(fornecedor(18,18,'Teste5','Teste5','Teste5','Teste5','Teste5','Teste5','Teste5','Teste5')).
+assert(fornecedor(19,19,'Teste6','Teste6','Teste6','Teste6','Teste6','Teste6','Teste6','Teste6')).
+assert(fornecedor(20,20,'Teste7','Teste7','Teste7','Teste7','Teste7','Teste7','Teste7','Teste7')).
+assert(fornecedor(21,21,'Teste8','Teste8','Teste8','Teste8','Teste8','Teste8','Teste8','Teste8')).

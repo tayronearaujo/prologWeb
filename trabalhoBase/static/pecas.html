@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peças</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container-fluid">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary navbar-fixed-top">
+            <a class="navbar-brand" href="#">AeroSystem</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="funcionario.html">Funcionário<span
+                                class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="fornecedor.html">Fornecedor</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="compras.html">Compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pecas.html">Peças</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+      SISTEMA DE GESTÃO DE ESTOQUE E PRODUÇÃO
+DE AERONAVES
+    </span>
+            </div>
+        </nav>
+    </div>
+</header>
+<form autocomplete="off" class="container container-card">
+    <div class="row m-3">
+        <h3 class="col-12 mt-5 mb-3">Peças cadastrados</h3>
+
+        <div class="container-card col-12 mt-3">
+
+            <div class="col-12 row d-flex align-items-center mt-3">
+                <div class="form-group col-9">
+                    <label class="title-input" for="inputBusca">Buscar</label>
+                    <input type="text" autocomplete="no" class="form-control" id="inputBusca">
+                </div>
+
+                <div class="form-group col-3 mt-4">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary w-100" data-toggle="modal"
+                            data-target="#modalPeca">
+                        Incluir nova peça
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tabela -->
+            <div class="col-12">
+
+                <table class="table">
+
+                    <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Código Peça</th>
+                        <th scope="col">Descrição das peças</th>
+                        <th scope="col">Peso Líq.</th>
+                        <th scope="col">Custo</th>
+                        <th scope="col">Opções</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>0001</td>
+                        <td>PARAFUSO</td>
+                        <td>1.0</td>
+                        <td>R$ 130,00</td>
+                        <td>
+                            <button type="button" class="mb-table mr-1" data-toggle="modal"
+                                    data-target="#modalPeca">
+                                <i class="fa fa-pencil-square-o m-auto" style="font-size:17px"></i>
+                            </button>
+                            <button type="button" class="mb-table" data-toggle="modal"
+                                    data-target="#modalAviso">
+                                <i class="fa fa-trash m-auto" style="font-size:17px"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0002</td>
+                        <td>ARROELA ALUMÍNIO</td>
+                        <td>1.0</td>
+                        <td>R$ 123,00</td>
+                        <td>
+                            <button type="button" class="mb-table mr-1" data-toggle="modal"
+                                    data-target="#modalPeca">
+                                <i class="fa fa-pencil-square-o m-auto" style="font-size:17px"></i>
+                            </button>
+                            <button type="button" class="mb-table" data-toggle="modal"
+                                    data-target="#modalAviso">
+                                <i class="fa fa-trash m-auto" style="font-size:17px"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0003</td>
+                        <td>HELICE</td>
+                        <td>1.0</td>
+                        <td>R$ 11,00</td>
+                        <td>
+                            <button type="button" class="mb-table mr-1" data-toggle="modal"
+                                    data-target="#modalPeca">
+                                <i class="fa fa-pencil-square-o m-auto" style="font-size:17px"></i>
+                            </button>
+                            <button type="button" class="mb-table" data-toggle="modal"
+                                    data-target="#modalAviso">
+                                <i class="fa fa-trash m-auto" style="font-size:17px"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>0004</td>
+                        <td>MOTOR MR-500X</td>
+                        <td>1.0</td>
+                        <td>R$ 1.500,00</td>
+                        <td>
+                            <button type="button" class="mb-table mr-1" data-toggle="modal"
+                                    data-target="#modalPeca">
+                                <i class="fa fa-pencil-square-o m-auto" style="font-size:17px"></i>
+                            </button>
+                            <button type="button" class="mb-table" data-toggle="modal"
+                                    data-target="#modalAviso">
+                                <i class="fa fa-trash m-auto" style="font-size:17px"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalPeca" tabindex="-1" aria-labelledby="titlemodalPeca"
+             aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="titlemodalPeca">Cadastro de Peças</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-12 row m-auto p-0">
+
+                            <div class="form-group col-6">
+                                <label class="title-input" for="inputNome">Nome</label>
+                                <input type="text" class="form-control" id="inputNome">
+                            </div>
+
+                            <div class="form-group col-6">
+                                <label class="title-input" for="inputAviao">Avião</label>
+                                <input type="text" class="form-control" id="inputAviao">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputCodArmazenamento">Cód. Armazenamento</label>
+                                <input type="number" class="form-control" id="inputCodArmazenamento">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputCodFabrica">Cód. Fábrica</label>
+                                <input type="text" class="form-control" id="inputCodFabrica">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputGrupo">Grupo</label>
+                                <input type="text" class="form-control" id="inputGrupo">
+                            </div>
+
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputPesoLiquido">Peso Liq.</label>
+                                <input type="text" class="form-control" id="inputPesoLiquido">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputPesoBruto">Peso Bruto</label>
+                                <input type="text" class="form-control" id="inputPesoBruto">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputConjunto">Conjunto</label>
+                                <input type="text" class="form-control" id="inputConjunto">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputCusto">Custo</label>
+                                <input type="text" class="form-control" id="inputCusto">
+                            </div>
+
+                            <span class="border-bottom col-12"></span>
+
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputEstoqueMin">Estoque Mínimo</label>
+                                <input type="number" class="form-control" id="inputEstoqueMin">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputEstoqueMax">Estoque Máximo</label>
+                                <input type="text" class="form-control" id="inputEstoqueMax">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputQuantEstoque">Quant. Estoque</label>
+                                <input type="text" class="form-control" id="inputQuantEstoque">
+                            </div>
+
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputSala">Sala</label>
+                                <input type="text" class="form-control" id="inputSala">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputCorredor">Corredor</label>
+                                <input type="text" class="form-control" id="inputCorredor">
+                            </div>
+
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputGaveta">Gaveta</label>
+                                <input type="text" class="form-control" id="inputGaveta">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputEstante">Estante</label>
+                                <input type="text" class="form-control" id="inputEstante">
+                            </div>
+
+                            <div class="form-group col-3">
+                                <label class="title-input" for="inputPrateleira">Prateleira</label>
+                                <input type="text" class="form-control" id="inputPrateleira">
+                            </div>
+
+                            <span class="border-bottom col-12"></span>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Cadastrar peça</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Aviso -->
+        <div class="modal fade" id="modalAviso" data-backdrop="static" data-keyboard="false" tabindex="-1"
+             aria-labelledby="modalAvisoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modalAvisoLabel">Excluir Peça</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Deseja mesmo excluir esta Peça?</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
