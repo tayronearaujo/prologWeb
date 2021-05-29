@@ -53,10 +53,10 @@ user:body(bootstrap, Corpo) -->
 
 % Tratadores
 
-produtos(_Pedido) :-
+pessoas(_Pedido) :-
     reply_html_page(
         bootstrap,
-        [ title('Cadastro de produtos')],
+        [ title('Cadastro de pessoas')],
         [ div(class(container),
               [ 
                 h1('Desenvolvendo aplicativo de gestão comercial multiplataforma utilizando padrões livres de Desenvolvendo'),
@@ -92,5 +92,4 @@ produtos(_Pedido) :-
               ]
             ) 
         ]).
-
 
