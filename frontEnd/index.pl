@@ -26,12 +26,29 @@ user:file_search_path(dir_js,  'js').
 :- multifile 
     user:body//2.
 
+user:body(bootstrap, Corpo) -->
+  html(body([ \html_post(head,
+                         [ meta([name(viewport),
+                                 content('width=device-width, initial-scale=1')])]),
+              \html_root_attribute(lang,'pt-br'),
+              \html_requires(css('bootstrap.min.css')),
+
+              Corpo,
+
+              script([ src('js/bootstrap.bundle.min.js'),
+                       type('text/javascript')], [])
+            ])).
+
+% Rotas
+:- multifile http:location/3.
+:- dynamic   http:location/3.
+
 :- http_handler(root(.), home , []).
 
-:- http_handler(root(produtos), produtos , []).
-:- http_handler(root(pessoas), pessoas , []).
+:- http_handler(root(pessoas), pessoas, []).
 
-:- ensure_loaded(base(bootstrap)).
+:- http_handler(root(produtos), produtos, []).
+
 
 home(_Pedido) :-
   reply_html_page(
@@ -41,13 +58,23 @@ home(_Pedido) :-
         [ h1('Desenvolvendo aplicativo de gestão comercial multiplataforma utilizando padrões livres de Desenvolvendo'),
           nav(class(['nav','flex-row']),
               [ 
-                a([class('nav-link'),
-                href('./pessoas')],
-                ['Pessoas']),
-
-                a([class('nav-link'),
-                href('./produtos')],
-                ['Produtos'])
+                \linkPessoas(),
+                \linkProdutos() 
               ])
         ]) 
       ]).
+
+
+linkPessoas() -->
+  html(
+    a([class('nav-link'),
+    href('./pessoas')],
+    'Cadastro de pessoas')
+  ).
+
+linkProdutos() -->
+  html(
+    a([class('nav-link'),
+    href('/produtos')],
+    'Cadastro de produtos')
+  ).

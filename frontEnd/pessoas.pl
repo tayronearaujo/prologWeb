@@ -41,15 +41,9 @@ user:body(bootstrap, Corpo) -->
                             type('text/javascript')], [])
                  ])).
 
-
-
 % Liga a rota ao tratador
-:- http_handler(root(.), home , []).
 
-:- http_handler(root(exemplo1), exemplo1 , []).
-:- http_handler(root(exemplo2), exemplo2 , []).
-:- http_handler(root(exemplo3), exemplo3 , []).
-
+:- http_handler(root(pessoas), pessoas , []).
 
 % Tratadores
 
@@ -59,28 +53,60 @@ pessoas(_Pedido) :-
         [ title('Cadastro de pessoas')],
         [ div(class(container),
               [ 
-                h1('Desenvolvendo aplicativo de gestão comercial multiplataforma utilizando padrões livres de Desenvolvendo'),
+                h1('Cadastro de pessoas'),
                     div([class('modal-body')],[
                         div([class('col-12 row m-auto p-0')],[
                             
-                            div([class('form-group col-6')],[
-                                label([class('title-input')], 'Nome'),
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Nome:'),
                                 input([
                                         type(text),
                                         class('form-control')
                                     ],[])
                             ]),
                             
-                            div([class('form-group col-6')],[
-                                label([class('title-input')], 'Nome'),
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Endereço:'),
                                 input([
                                         type(text),
                                         class('form-control')
                                     ],[])
                             ]),
 
-                            div([class('form-group col-6')],[
-                                label([class('title-input')], 'Nome'),
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Telefone:'),
+                                input([
+                                        type(number),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Bairro:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Cpf:'),
+                                input([
+                                        type(number),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Identidade:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Complemento:'),
                                 input([
                                         type(text),
                                         class('form-control')
@@ -88,8 +114,17 @@ pessoas(_Pedido) :-
                             ])
                             
                         ])
-                    ])
+                    ]),
+                    \footer
               ]
             ) 
         ]).
 
+footer -->
+    html(
+    div([class('modal-footer')],[
+            button([class('btn btn-primary'), type(submit)], 'Cadastrar pessoa'),
+            button([class('btn btn-primary')], 'Cancelar'),
+            button([class('btn btn-primary'), href('/')], 'Voltar para home')
+        ])
+    ).
