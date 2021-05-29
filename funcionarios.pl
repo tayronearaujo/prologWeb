@@ -28,69 +28,91 @@ user:file_search_path(dir_js,  'js').
 :- multifile
         user:body//2.
 
+user:body(bootstrap, Corpo) -->
+       html(body([ \html_post(head,
+                              [ meta([name(viewport),
+                                      content('width=device-width, initial-scale=1')])]),
+                   \html_root_attribute(lang,'pt-br'),
+                   \html_requires(css('bootstrap.min.css')),
+
+                   Corpo,
+
+                   script([ src('js/bootstrap.bundle.min.js'),
+                            type('text/javascript')], [])
+                 ])).
 
 % Liga a rota ao tratador
-:- http_handler(root(.), home , []).
 
-:- http_handler(root(exemplo1), exemplo1 , []).
-:- http_handler(root(exemplo2), exemplo2 , []).
-:- http_handler(root(exemplo3), exemplo3 , []).
-
+:- http_handler(root(funcionarios), funcionarios , []).
 
 % Tratadores
 
 funcionarios(_Pedido) :-
     reply_html_page(
         bootstrap,
-        [ title('Funcionarios')],
+        [ title('Cadastro de funcionarios')],
         [ div(class(container),
               [ 
-                h1('Desenvolvendo aplicativo de gestão comercial multiplataforma utilizando padrões livres de Desenvolvendo'),
+                h1('Cadastro de funcionarios'),
                     div([class('modal-body')],[
                         div([class('col-12 row m-auto p-0')],[
-
-                            div([class('form-group col-6')],[
-                                label([class('title-input')], 'Numero funcionario:'),
+                            
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Numero funcionario::'),
                                 input([
-                                        type(text),
+                                        type(number),
                                         class('form-control')
                                     ],[])
                             ]),
-
-                            div([class('form-group col-6')],[
+                            
+                            div([class('form-group col-12')],[
                                 label([class('title-input')], 'Data adimissao:'),
                                 input([
-                                        type(text),
-                                        class('form-control')
-                                    ],[])
-                            ])
-                            div([class('form-group col-6')],[
-                                label([class('title-input')], 'Numero carteira de trabalho:'),
-                                input([
-                                        type(text),
+                                        type(date(Date)
+                                        ),
                                         class('form-control')
                                     ],[])
                             ]),
-                            div([class('form-group col-6')],[
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Numero carteira de trabalho::'),
+                                input([
+                                        type(number),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
                                 label([class('title-input')], 'Data Ferias:'),
                                 input([
-                                        type(text),
+                                        type(date(Date)
+                                        ),
                                         class('form-control')
                                     ],[])
                             ]),
-                            div([class('form-group col-6')],[
+
+                            div([class('form-group col-12')],[
                                 label([class('title-input')], 'Horario:'),
                                 input([
-                                        type(text),
-
+                                        type(number),
                                         class('form-control')
                                     ],[])
                             ])
 
-
-
+                           
+                            
                         ])
-                    ])
+                    ]),
+                    \footer
               ]
             ) 
         ]).
+
+footer -->
+    html(
+    div([class('modal-footer')],[
+            button([class('btn btn-primary'), type(submit)], 'Cadastrar funcionario'),
+            button([class('btn btn-primary')], 'Editar'),
+            button([class('btn btn-primary'), href('/')], 'Excluir funcionario')
+        ])
+    ).
