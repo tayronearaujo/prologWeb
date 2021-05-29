@@ -84,8 +84,8 @@ linkProdutos() -->
 footer -->
   html(
   div([class('modal-footer')],[
-          button([class('btn btn-primary'), type(submit)], 'Cadastrar pessoa'),
-          button([class('btn btn-primary')], 'Cancelar'),
+          button([class('btn btn-success'), type(submit)], 'Cadastrar pessoa'),
+          button([class('btn btn-danger')], 'Cancelar'),
           a([class(['btn' ,'btn-primary']), href('/')],
        'Voltar para home')
       ])).
@@ -222,7 +222,12 @@ produtos(_Pedido) :-
                               ])
                               
                           ]),
-                          \footer
+                          div([class('modal-footer')],[
+                            button([class('btn btn-success'), type(submit)], 'Cadastrar produto'),
+                            button([class('btn btn-danger')], 'Cancelar'),
+                            a([class(['btn' ,'btn-primary']), href('/')],
+                         'Voltar para home')
+                        ])
                       ])
                 ]
               ) 
