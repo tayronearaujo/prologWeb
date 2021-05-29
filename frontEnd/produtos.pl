@@ -1,16 +1,13 @@
-:- use_module(library(http/thread_httpd)).
-:- use_module(library(http/http_dispatch)).
+/* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
 
-% html_requires está aqui
+/* html_requires  */
 :- use_module(library(http/html_head)).
-
-% serve_files_in_directory está aqui
-:- use_module(library(http/http_server_files)).
 
 servidor(Porta) :-
     http_server(http_dispatch, [port(Porta)]).
 
+:- http_handler(/, oi, []).
 
 % Localização dos diretórios no sistema de arquivos
 :- multifile user:file_search_path/2.

@@ -1,8 +1,6 @@
-:- use_module(library(http/thread_httpd)).
-:- use_module(library(http/http_dispatch)).
+/* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
-
-% html_requires está aqui
+/* html_requires  */
 :- use_module(library(http/html_head)).
 
 % serve_files_in_directory está aqui
