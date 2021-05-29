@@ -1,3 +1,7 @@
+:- use_module(library(http/thread_httpd)).
+:- use_module(library(http/http_dispatch)).
+:- use_module(library(http/html_write)).
+
 /* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
 /* html_requires  */
@@ -76,3 +80,150 @@ linkProdutos() -->
     href('/produtos')],
     'Cadastro de produtos')
   ).
+
+footer -->
+  html(
+  div([class('modal-footer')],[
+          button([class('btn btn-primary'), type(submit)], 'Cadastrar pessoa'),
+          button([class('btn btn-primary')], 'Cancelar'),
+          a([class(['btn' ,'btn-primary']), href('/')],
+       'Voltar para home')
+      ])).
+
+pessoas(_Pedidos):-
+    reply_html_page(
+        bootstrap,
+        [ title('Cadastro de pessoas')],
+        [ div(class(container),
+              [ 
+                h1('Cadastro de pessoas'),
+                    div([class('modal-body')],[
+                        div([class('col-12 row m-auto p-0')],[
+                            
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Nome:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+                            
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Endereço:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Telefone:'),
+                                input([
+                                        type(number),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Bairro:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Cpf:'),
+                                input([
+                                        type(number),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Identidade:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ]),
+
+                            div([class('form-group col-12')],[
+                                label([class('title-input')], 'Complemento:'),
+                                input([
+                                        type(text),
+                                        class('form-control')
+                                    ],[])
+                            ])
+                            
+                        ])
+                    ]),
+                    \footer
+              ]
+            ) 
+        ]).
+
+produtos(_Pedido) :-
+      reply_html_page(
+          bootstrap,
+          [ title('Cadastro de produtos')],
+          [ div(class(container),
+                [ 
+                  h1('Cadastro de Produtos'),
+                      div([class('modal-body')],[
+                          div([class('col-12 row m-auto p-0')],[
+                              
+                              div([class('form-group col-12')],[
+                                  label([class('title-input')], 'Nome'),
+                                  input([
+                                          type(text),
+                                          class('form-control')
+                                      ],[])
+                              ]),
+                              
+                              div([class('form-group col-6')],[
+                                  label([class('title-input')], 'Quantidade atual:'),
+                                  input([
+                                          type(number),
+                                          class('form-control')
+                                      ],[])
+                              ]),
+  
+                              div([class('form-group col-6')],[
+                                  label([class('title-input')], 'Quantidade mínima:'),
+                                  input([
+                                          type(number),
+                                          class('form-control')
+                                      ],[])
+                              ]),
+  
+                              div([class('form-group col-12')],[
+                                  label([class('title-input')], 'Descrição:'),
+                                  input([
+                                          type(text),
+                                          class('form-control')
+                                      ],[])
+                              ]),
+  
+                              div([class('form-group col-6')],[
+                                  label([class('title-input')], 'Preço 1'),
+                                  input([
+                                          type(number),
+                                          class('form-control')
+                                      ],[])
+                              ]),
+  
+                              div([class('form-group col-6')],[
+                                  label([class('title-input')], 'Preço 2'),
+                                  input([
+                                          type(number),
+                                          class('form-control')
+                                      ],[])
+                              ])
+                              
+                          ]),
+                          \footer
+                      ])
+                ]
+              ) 
+          ]).

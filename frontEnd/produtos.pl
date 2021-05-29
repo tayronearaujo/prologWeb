@@ -1,3 +1,7 @@
+:- use_module(library(http/thread_httpd)).
+:- use_module(library(http/http_dispatch)).
+:- use_module(library(http/html_write)).
+
 /* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
 
@@ -6,8 +10,6 @@
 
 servidor(Porta) :-
     http_server(http_dispatch, [port(Porta)]).
-
-:- http_handler(/, oi, []).
 
 % Localização dos diretórios no sistema de arquivos
 :- multifile user:file_search_path/2.
@@ -42,8 +44,6 @@ user:body(bootstrap, Corpo) -->
 
 % Liga a rota ao tratador
 :- http_handler(root(.), produtos , []).
-
-
 
 
 % Tratadores
