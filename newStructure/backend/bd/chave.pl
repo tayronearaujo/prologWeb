@@ -13,6 +13,8 @@
 :- initialization( ( db_attach('./backend/bd/tbl_chave.pl', []),
                      at_halt(db_sync(gc(always))) ) ).
 
+carrega_tab(ArqTabela):-
+  db_attach(ArqTabela, []).
 
 pk(Nome, Valor):-
     atom_concat(pk, Nome, Mutex),

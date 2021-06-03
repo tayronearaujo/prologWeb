@@ -62,8 +62,9 @@ user:file_search_path(bd,  backend(bd)).
 :- load_files([ servidor,
                 rotas,
                 gabarito(bootstrap),
-                frontend(entrada),
-                frontend(bookmark),
+                frontend(index),
+                frontend(pessoas),
+                frontend(produtos),
                 api1(bookmarks)
               ],
 	          [ silent(true)
