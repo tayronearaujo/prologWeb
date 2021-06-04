@@ -42,7 +42,7 @@ http:location(api1, api(v1), []).
 
 
 %% Backend
-:- http_handler( api1(produtos),
-                produtos(Método) ,
+:- http_handler( api1(produtos/Id),
+                produtos(Método,Id) ,
                  [ method(Método),
                    methods([ get, post, put, delete ]) ]).

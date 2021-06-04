@@ -1,7 +1,7 @@
 :- module(
     produtos,
     [ carrega_tab/1,
-      produtos/7, insere/1
+      produtos/7, insere/7
     ]).
 
 :- use_module(library(persistency)).

@@ -58,6 +58,8 @@ user:file_search_path(api1, api(v1)).
 % Banco de dados
 user:file_search_path(bd,  backend(bd)).
 
+user:file_search_path(config,  './config').
+
 
 :- load_files([ servidor,
                 rotas,
@@ -65,7 +67,9 @@ user:file_search_path(bd,  backend(bd)).
                 frontend(index),
                 frontend(pessoas),
                 frontend(produtos),
-                api1(bookmarks)
+                config(banco_de_dados),
+                api1(produtos)
+
               ],
 	          [ silent(true)
 	          ]).
