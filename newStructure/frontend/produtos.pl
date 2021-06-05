@@ -11,6 +11,9 @@ produtos(_Pedido) :-
         [ title('Cadastro de produtos')],
         [ div(class(container),
               [ 
+                \html_requires(css('all.min.css')),
+                \html_requires(js('rest.js')),
+                \html_requires(js('bookmark.js')),
                 h1('Cadastro de Produtos'),
 
                     form([

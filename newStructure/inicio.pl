@@ -17,9 +17,11 @@
 :- multifile http_json/1.
 
 http_json:json_type('application/x-javascript').
+http_json:json_type('application/json').
 http_json:json_type('text/javascript').
 http_json:json_type('text/x-javascript').
 http_json:json_type('text/x-json').
+
 
 :- initialization( servidor(8000) ).
 
@@ -52,13 +54,12 @@ user:file_search_path(frontend,  './frontend').
 user:file_search_path(backend,  './backend').
 
 % API REST
-user:file_search_path(api,   backend(api)).
+user:file_search_path(api, backend(api)).
 user:file_search_path(api1, api(v1)).
 
 % Banco de dados
 user:file_search_path(bd,  backend(bd)).
 
-user:file_search_path(config,  './config').
 
 
 :- load_files([ servidor,
@@ -67,8 +68,8 @@ user:file_search_path(config,  './config').
                 frontend(index),
                 frontend(pessoas),
                 frontend(produtos),
-                config(banco_de_dados),
-                api1(produtos)
+                api1(produtos),
+                api1(pessoa)
 
               ],
 	          [ silent(true)

@@ -1,0 +1,8 @@
+{
+    "prod_nome":    "teste3",
+    "prod_qtdeAtual": 5,
+    "prod_qtdeMinima": 1,
+    "prod_preco1": 5.5,
+    "prod_preco2": 7.5,
+    "prod_descricao": "TESTE POST"
+}

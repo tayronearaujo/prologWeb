@@ -1,0 +1,11 @@
+{
+    "pessoa_id": 2,
+    "pessoa_nome": "test2",
+    "pessoa_endereco":"rua2 2xxxx",
+    "pessoa_telefone":"22222222",
+    "pessoa_bairro":"teste",
+    "pessoa_cpf":"564156222246",
+    "pessoa_identidade":"12564541",
+    "pessoa_complemento":"casa2"
+ }
+ 

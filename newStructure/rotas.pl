@@ -46,3 +46,9 @@ http:location(api1, api(v1), []).
                 produtos(Método,Id) ,
                  [ method(Método),
                    methods([ get, post, put, delete ]) ]).
+
+%% Backend
+:- http_handler( api1(pessoa/Id),
+                produtos(Método,Id) ,
+                 [ method(Método),
+                   methods([ get, post, put, delete ]) ]).

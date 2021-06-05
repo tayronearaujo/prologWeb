@@ -10,12 +10,16 @@
 user:body(bootstrap, Corpo) -->
        html(body([ \html_post(head,
                               [ meta([name(viewport),
-                                      content('width=device-width, initial-scale=1')])]),
+                                      content([ 'width=device-width',
+                                                'initial-scale=1',
+                                                'shrink-to-fit=no'
+                                              ])])]),
                    \html_root_attribute(lang,'pt-br'),
                    \html_requires(css('bootstrap.min.css')),
+                   \html_requires(js('rest.js')),
 
                    Corpo,
 
-                   script([ src('js/bootstrap.bundle.min.js'),
+                   script([ src('/js/bootstrap.bundle.min.js'),
                             type('text/javascript')], [])
                  ])).

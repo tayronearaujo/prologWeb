@@ -19,11 +19,10 @@ produtos( prod_cod:nonneg,
           prod_qtdeAtual:nonneg,
           prod_qtdeMinima:nonneg,
           prod_preco1:float,
-          prod_descricao:string,
-          prod_preco2:float).
+          prod_preco2:float,
+          prod_descricao:string).
 
-:- initialization( ( db_attach('./backend/db/tbl_produtos.pl', []),
-               at_halt(db_sync(gc(always))) )).
+:- initialization( at_halt(db_sync(gc(always))) ).
 
 carrega_tab(ArqTabela):- db_attach(ArqTabela, []).
 

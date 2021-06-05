@@ -1,5 +1,7 @@
 /* import { enviar } from './rest.js'; */
 
+alert('fdp')
+
 function redireciona(resposta, rota){
 
   console.log(resposta);
