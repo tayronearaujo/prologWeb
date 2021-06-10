@@ -19,8 +19,8 @@
 %      biblioteca http/http_server_files, os demais precisam
 %      ser definidos.
 
-http:location(api, root(api), []).
-http:location(api1, api(v1), []).
+% http:location(api, root(api), []).
+% http:location(api1, api(v1), []).
 
 /**************************
  *                        *
@@ -37,18 +37,31 @@ http:location(api1, api(v1), []).
 
 %% Frontend
 :- http_handler(root(.), home, []).
+
+%Tayrone
 :- http_handler(root(pessoas), pessoas, []).
 :- http_handler(root(produtos), produtos, []).
 
+%Gabi
+:- http_handler(root(funcionarios), funcionarios, []).
+:- http_handler(root(fluxoDeCaixa), fluxoDeCaixa, []).
+
+%heitor
+:- http_handler(root(vendas), vendas, []).
+:- http_handler(root(transacao), transacao, []).
+
+%amora
+:- http_handler(root(clientes), clientes, []).
+:- http_handler(root(itemVenda), itemVenda, []).
 
 %% Backend
-:- http_handler( api1(produtos/Id),
-                produtos(Método,Id) ,
-                 [ method(Método),
-                   methods([ get, post, put, delete ]) ]).
+% :- http_handler( api1(produtos/Id),
+%                 produtos(Método,Id) ,
+%                  [ method(Método),
+%                    methods([ get, post, put, delete ]) ]).
 
-%% Backend
-:- http_handler( api1(pessoa/Id),
-                produtos(Método,Id) ,
-                 [ method(Método),
-                   methods([ get, post, put, delete ]) ]).
+% %% Backend
+% :- http_handler( api1(pessoa/Id),
+%                 produtos(Método,Id) ,
+%                  [ method(Método),
+%                    methods([ get, post, put, delete ]) ]).

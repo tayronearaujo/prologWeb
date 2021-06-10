@@ -10,7 +10,6 @@
 % Para as ações de logging
 :- use_module(library(http/http_log)).
 
-
 :- use_module(library(http/http_json)).
 
 /* Aumenta a lista de tipos aceitos pelo servidor */
@@ -21,7 +20,6 @@ http_json:json_type('application/json').
 http_json:json_type('text/javascript').
 http_json:json_type('text/x-javascript').
 http_json:json_type('text/x-json').
-
 
 :- initialization( servidor(8000) ).
 
@@ -45,22 +43,18 @@ user:file_search_path(dir_js,  './js').
 user:file_search_path(pl, './prolog').
 user:file_search_path(gabarito, pl('gabaritos')).
 
-
 %% Front-end
 user:file_search_path(frontend,  './frontend').
 
-
 %% Backend
-user:file_search_path(backend,  './backend').
+% user:file_search_path(backend,  './backend').
 
-% API REST
-user:file_search_path(api, backend(api)).
-user:file_search_path(api1, api(v1)).
+% % API REST
+% user:file_search_path(api, backend(api)).
+% user:file_search_path(api1, api(v1)).
 
-% Banco de dados
-user:file_search_path(bd,  backend(bd)).
-
-
+% % Banco de dados
+% user:file_search_path(bd,  backend(bd)).
 
 :- load_files([ servidor,
                 rotas,
@@ -68,9 +62,12 @@ user:file_search_path(bd,  backend(bd)).
                 frontend(index),
                 frontend(pessoas),
                 frontend(produtos),
-                api1(produtos),
-                api1(pessoa)
-
+                frontend(funcionarios),
+                frontend(fluxoDeCaixa),
+                frontend(vendas),
+                frontend(transacao),
+                frontend(itemVenda),
+                frontend(clientes)
               ],
 	          [ silent(true)
 	          ]).

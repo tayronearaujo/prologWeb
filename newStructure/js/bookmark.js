@@ -1,7 +1,5 @@
 /* import { enviar } from './rest.js'; */
 
-alert('fdp')
-
 function redireciona(resposta, rota){
 
   console.log(resposta);
@@ -12,7 +10,6 @@ function redireciona(resposta, rota){
 function redirecionaResposta(evento, rotaRedireção) {
   enviar(evento, resposta => redireciona(resposta, rotaRedireção));
 }
-
 
 function apagar(evento, rotaRedireção) {
   evento.preventDefault();
