@@ -5,9 +5,12 @@
 tabela(chave).
 tabela(pessoa).
 
+
+
 % Não mexa daqui em diante
 
 :- initialization( carrega_tabelas ).
+
 
 carrega_tabelas():-
     findall(Tab, tabela(Tab), Tabs),

@@ -1,2 +1,1 @@
-created(1623376654.720299).
-assert(chave(produtos,2)).
+created(1623384096.7905426).
