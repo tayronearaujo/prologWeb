@@ -3,11 +3,8 @@
 % Coloque aqui todas as tabelas do banco.
 
 tabela(chave).
-tabela(usuarios).
-tabela(clientes).
-
-% tabela(formapagamento).
-
+tabela(pessoas).
+tabela(produtos).
 
 % Não mexa daqui em diante
 

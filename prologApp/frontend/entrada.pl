@@ -5,22 +5,20 @@
 
 :- ensure_loaded(gabarito(bootstrap5)).
 
-/* :- use_module(bd(bookmark), []).
- */
-:- use_module(bd(usuarios), []).
-:- use_module(bd(clientes), []).
+:- use_module(bd(pessoas), []).
+:- use_module(bd(produtos), []).
 
 
 entrada(_Pedido) :-
     reply_html_page(
         bootstrap5,
-        [ title('CONTROLE FINANCEIRO DE UMA MICROEMPRESA')],
+        [ title('GCM')],
         [ div(class(container),
-            [ h1('SISTEMAS DE INFORMACAO PARA CONTROLE FINANCEIRO DE UMA MICROEMPRESA VIA WEB'),
+            [ h1('Desenvolvendo aplicativo de gestão comercial multiplataforma utilizando padrões livres de desenvolvendo'),
                 nav(class(['nav','flex-column']),
                     [ 
-                        \link_usuario(1),
-                        \link_cliente(1)
+                        \link_pessoas(1),
+                        \link_produtos(1)
             
                     ])
                 ])
@@ -37,15 +35,15 @@ campo(Nome,Rotulo,Tipo) -->
     [label([for=Nome, class('form-label')],Rotulo),
         input([name=Nome,type=Tipo,class('form-control'),id=Nome])])).
 
-link_usuario(1) -->
+link_pessoas(1) -->
     html(a([ class(['nav-link']),
-            href('/usuarios')],
-        'Cadastro Usuario')).
+            href('/pessoas')],
+        'Cadastro pessoas')).
 
-link_cliente(1) -->
+link_produtos(1) -->
     html(a([ class(['nav-link']),
-            href('/clientes')],
-        'Cadastro Cliente')).
+            href('/produtos')],
+        'Cadastro produtos')).
 
 
 enviar_ou_cancelar(RotaDeRetorno) -->
@@ -55,7 +53,6 @@ enviar_ou_cancelar(RotaDeRetorno) -->
                a([ href(RotaDeRetorno),
                    class('ms-3 btn btn-outline-danger')], 'Cancelar')
             ])).
-
 
 metodo_de_envio(Metodo) -->
     html(input([type(hidden), name('_metodo'), value(Metodo)])).

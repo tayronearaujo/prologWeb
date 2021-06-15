@@ -1,2 +1,2 @@
-created(1623383727.0747766).
-assert(chave(bookmark,2)).
+created(1623632569.1973948).
+assert(chave(bookmark,9)).

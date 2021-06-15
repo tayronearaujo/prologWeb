@@ -54,15 +54,16 @@ http:location(webfonts, root(webfonts), []).
 /* :- http_handler( root(bookmark), cadastro, []).
  */
 %%pagina de cadastro
-:- http_handler(root(usuarios), usuarios , []).
-:- http_handler(root(clientes), clientes , []).
+:- http_handler(root(pessoas), pessoas , []).
+:- http_handler(root(produtos), produtos , []).
 
 
-%APU
-:- http_handler( api1(usuarios/Iduser), api_usuarios:usuarios(Metodo, Iduser),
+%API
+:- http_handler( api1(pessoas/Iduser), api_pessoas:pessoas(Metodo, Iduser),
                  [ method(Metodo),
                    methods([ get, post, put, delete ]) ]).
-:- http_handler( api1(clientes/IdClientes), api_clientes:clientes(Metodo, IdClientes),
+
+:- http_handler( api1(produtos/IdProdutos), api_produtos:produtos(Metodo, IdProdutos),
                  [ method(Metodo),
                    methods([ get, post, put, delete ]) ]).
 
