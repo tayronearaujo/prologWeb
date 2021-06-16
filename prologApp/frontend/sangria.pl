@@ -2,18 +2,34 @@
 :- use_module(library(http/html_write)).
 /* html_requires  */
 :- use_module(library(http/html_head)).
+:- use_module(tabela_sangria).
+
 
 :- ensure_loaded(gabarito(boot5rest)).
 
 sangria(_Pedido):-
+apelido_rota(root(itens), RotaDeRetorno),
     reply_html_page(
         boot5rest,
         [ title('Registro de sangria ')],
         [ div(class(container),
               [ \html_requires(js('bookmark.js')),
-                h1('Insira os dados para o registro'),
-                \form_sangria
+                h1('Aqui estao todas as sangrias'),
+              \tab_sangria(RotaDeRetorno)
               ]) ]).
+
+formulario5(_Pedido):- 
+              reply_html_page(
+                      boot5rest,
+                      [ title('Registro de sangria')],
+                      [ div(class(container),
+                      [ \html_requires(js('bookmark.js')),
+                         h1('Registro de sangria'),
+                         \form_sangria
+                                            
+                       ]) ]).
+
+
 
 form_sangria -->
     html(form([ id('bookmark-form'),

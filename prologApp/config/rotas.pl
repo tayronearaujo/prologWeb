@@ -26,6 +26,11 @@ http:location(api, root(api), []).
 http:location(api1, api(v1), []).
 http:location(webfonts, root(webfonts), []).
 
+
+apelido_rota(Apelido, RotaCompleta):-
+  http_absolute_location(Apelido, Rota, []),
+  atom_concat(Rota, '/', RotaCompleta).
+
 /**************************
  *                        *
  *      Tratadores        *
@@ -48,7 +53,13 @@ http:location(webfonts, root(webfonts), []).
 % Rotas do Frontend
 
 %% A página inicial
-:- http_handler( root(.), entrada,   []).
+:- http_handler( root(.), login,   []).
+:- http_handler( root(entrada), entrada,   []).
+
+
+
+
+%:- http_handler( root(.), entrada,   []).
 
 %% A página de cadastro de novos bookmarks
 /* :- http_handler( root(bookmark), cadastro, []).
@@ -63,6 +74,17 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(sangria), sangria, []).
 :- http_handler(root(cliente), cliente, []).
 :- http_handler(root(item), item, []).
+:- http_handler( root(valida_login), entrada, []).
+:- http_handler( root(form_item), item:formulario, []).
+:- http_handler( root(form_cliente), cliente:formulario2, []).
+:- http_handler( root(form_fluxoDeCaixa), fluxoDeCaixa:formulario3, []).
+:- http_handler( root(form_funcionarios), funcionarios:formulario4, []).
+:- http_handler( root(form_pessoas), usuarios:formulario7, []).
+:- http_handler( root(form_produtos), produtos:formulario1, []).
+:- http_handler( root(form_sangria), sangria:formulario5, []).
+:- http_handler( root(form_transacao), transaco:formulario6, []).
+:- http_handler( root(form_vendas), vendas:formulario8, []).
+
 
 
 % Rotas do Backend

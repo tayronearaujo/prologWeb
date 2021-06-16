@@ -98,7 +98,7 @@ link_cliente(1) -->
 link_item(1) -->
                                 html(a([ class(['nav-link']),
                                         href('/item')],
-                                    'Cadastro de intens')).
+                                    'Cadastro de itens')).
 
 
 

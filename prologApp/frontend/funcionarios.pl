@@ -2,18 +2,31 @@
 :- use_module(library(http/html_write)).
 /* html_requires  */
 :- use_module(library(http/html_head)).
+:- use_module(tabela_funcionarios).
 
 :- ensure_loaded(gabarito(boot5rest)).
 
 funcionarios(_Pedido):-
+apelido_rota(root(funcionarios), RotaDeRetorno),
     reply_html_page(
         boot5rest,
         [ title('Cadastro de funcionarios')],
         [ div(class(container),
               [ \html_requires(js('bookmark.js')),
-                h1('Insira os dados para cadastro'),
-                \form_funcionarios
+                h1('Aqui estao todos os funcionarios'),
+              \tab_funcionarios(RotaDeRetorno)
               ]) ]).
+
+formulario4(_Pedido):- 
+              reply_html_page(
+                      boot5rest,
+                      [ title('Cadastro de funcionarios')],
+                      [ div(class(container),
+                      [ \html_requires(js('bookmark.js')),
+                         h1('Cadastro de funcionarios'),
+                         \form_funcionarios
+                                            
+                       ]) ]).
 
 form_funcionarios -->
     html(form([ id('bookmark-form'),

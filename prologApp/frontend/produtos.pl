@@ -2,18 +2,32 @@
 :- use_module(library(http/html_write)).
 /* html_requires  */
 :- use_module(library(http/html_head)).
-
+:- use_module(tabela_produtos).
 :- ensure_loaded(gabarito(boot5rest)).
 
 produtos(_Pedido):-
+  apelido_rota(root(produto), RotaDeRetorno),
     reply_html_page(
         boot5rest,
         [ title('Cadastro produtos')],
         [ div(class(container),
               [ \html_requires(js('bookmark.js')),
-                h1('Insira os dados para cadastro'),
-                \form_produtos
+                h1('Aqui estao todos os produtos'),
+              \tab_produtos(RotaDeRetorno)
+                
               ]) ]).
+
+formulario1(_Pedido):-
+              reply_html_page(
+                  boot5rest,
+                  [ title('Cadastro de produtos ')],
+                  [ div(class(container),
+                        [ \html_requires(js('bookmark.js')),
+                          h1('Insira os dados para o registro'),
+                          \form_produtos
+                        ]) ]).
+
+
 
 form_produtos -->
     html(form([ id('bookmark-form'),

@@ -26,7 +26,11 @@
                 frontend(vendas),
                 frontend(sangria),
                 frontend(cliente),
-                frontend(item)
+                frontend(item),
+                frontend(login),
+                frontend(pag_cadastro),
+                frontend(menu_topo),
+                frontend(icones)
           
               ],
               [ silent(true),
@@ -44,7 +48,8 @@
                 api1(api_vendas),
                 api1(api_sangria),
                 api1(api_cliente),
-                api1(api_item)
+                api1(api_item),
+                api1(api_usuarios)
                 
 
               ],

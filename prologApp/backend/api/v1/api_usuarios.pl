@@ -1,9 +1,6 @@
-:- module(
-    usuarios,
-    [
-        usuarios/3
-    ]
-).
+:- module(api_usuarios,[usuarios/3]).
+   
+  
 /* http_parameters   */
 :- use_module(library(http/http_parameters)).
 /* http_reply        */

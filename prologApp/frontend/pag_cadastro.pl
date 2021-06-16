@@ -1,50 +1,58 @@
 :- module(
-    login,
-    [ login/1 ]).
+    pag_cadastro,
+    [ cadastro/1 ]).
 
 /* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
 /* html_requires  */
 :- use_module(library(http/html_head)).
 
-login(_) :-
+cadastro(_) :-
+ apelido_rota(api1(usuarios), RotaDeCadastro),
  reply_html_page(
      boot5rest,
-     [ title('Login')],
+     [ title('Cadastro de usuario')],
      [ \html_requires(css('custom.css')),
        \html_requires(css('login.css')),
+       \html_requires(js('comum.js')),
        \navegacao('menu-topo'),
-       \form_login
+       \form_cadastro(RotaDeCadastro)
      ]
  ).
 
-form_login -->
+form_cadastro(RotaDeCadastro) -->
  html(main(class('py-5'),
            section(class('container login py-5'),
                    div(class('row g-0'),
                        [div(class('col-lg-6'),
-                            img([class('img-fluid'),alt('Universidade'),src('img/universidade.png')],[])),
+                            img([ class('img-fluid'),
+                                  alt('Universidade'),
+                                  src('img/universidade.jpg')],[])),
                         div(class('col-lg-6 text-center py-5'),
-                            [ h1('Login'),
-                              \formulario_login,
-                              p(['Ainda não possui uma conta? ',
-                                 a([ href('/cadastro'),
+                            [ h1('Cadastro'),
+                              \formulario_cadastro(RotaDeCadastro),
+                              p(['JÃ¡ possui conta? ',
+                                 a([ href('/login'),
                                      class([ 'primary-link',
-                                             'text-decoration-none'])],
-                                   'Cadastre-se')])
+                                             'text-decoration-none' ])],
+                                   'Entrar')])
                             ])])))
      ).
 
-formulario_login -->
+formulario_cadastro(RotaDeCadastro) -->
  html(form([ class('p-3 rounded'),
+             onsubmit("redirecionaResposta( event, '/login' )"),
              method('POST'),
-             action('/valida_login')],
-           [ \mensagem,
+             action(RotaDeCadastro)],
+           [ \metodo_de_envio('POST'),
+             \mensagem,
+             \campo(nome,  'Nome',   text),
              \campo(email, 'E-mail', email),
-             \campo(senha,'Senha', password),
-             \selecao(funcao),
+             \campo(senha, 'Senha',  password),
+             input([type(hidden), name(funcao), value(user)]),
              \enviar_ou_cancelar('/')
             ])).
+
 
 mensagem -->
  html(div([ class('alert alert-danger visually-hidden'), role(alert)], ' ')).
@@ -61,13 +69,11 @@ selecao(Nome) -->
  html(div(class('mx-auto py-3 w-50'),
                 select([class('form-select border-0 mb-3'),
                         name(Nome),
-                        'aria-label'('Selecione tipo do usuÃ¡rio')],
+                        'aria-label'('Seleciona tipo do usuario')],
                        [ option([ selected(selected), value('')],
-                               'Tipo de usuÃ¡rio:'),
-                         option( value(admin),     'Administrador'),
-                         option( value(usuario), 'Usuario')
-                         
-                       ]))).
+                               'Selecione o tipo de usuario:'),
+                         option(value(user), 'User'),
+                         option(value(admin), 'Admin')]))).
 
 metodo_de_envio(Metodo) -->
  html(input([type(hidden), name('_metodo'), value(Metodo)])).
