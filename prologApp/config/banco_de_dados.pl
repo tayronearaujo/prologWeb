@@ -3,8 +3,18 @@
 % Coloque aqui todas as tabelas do banco.
 
 tabela(chave).
+tabela(usuario).
+tabela(funcao).
+tabela(usuario_funcao).
 tabela(pessoas).
 tabela(produtos).
+tabela(fluxoDeCaixa).
+tabela(funcionarios).
+tabela(transacao).
+tabela(vendas).
+tabela(sangria).
+tabela(cliente).
+tabela(item).
 
 % Não mexa daqui em diante
 

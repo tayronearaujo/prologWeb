@@ -56,9 +56,34 @@ http:location(webfonts, root(webfonts), []).
 %%pagina de cadastro
 :- http_handler(root(pessoas), pessoas , []).
 :- http_handler(root(produtos), produtos , []).
+:- http_handler(root(fluxoDeCaixa), fluxoDeCaixa , []).
+:- http_handler(root(funcionarios), funcionarios , []).
+:- http_handler(root(transacao), transacao, []).
+:- http_handler(root(vendas), vendas , []).
+:- http_handler(root(sangria), sangria, []).
+:- http_handler(root(cliente), cliente, []).
+:- http_handler(root(item), item, []).
 
 
-%API
+% Rotas do Backend
+
+% Validasao de login
+%:- http_handler( root(valida_login), logins:valida(Metodo),
+                % [ method(Metodo) ]).
+
+
+
+
+
+
+
+
+% Rotas API
+:- http_handler( api1(usuarios/Id), usuarios:usuarios(Metodo, Id),
+                 [ method(Metodo),
+                   methods([ get, post, put, delete ]) ]).
+
+
 :- http_handler( api1(pessoas/Iduser), api_pessoas:pessoas(Metodo, Iduser),
                  [ method(Metodo),
                    methods([ get, post, put, delete ]) ]).
@@ -66,4 +91,34 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler( api1(produtos/IdProdutos), api_produtos:produtos(Metodo, IdProdutos),
                  [ method(Metodo),
                    methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(fluxoDeCaixa/Flu_id), api_fluxoDeCaixa:fluxoDeCaixa(Metodo, Flu_id),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(funcionarios/Fun_id), api_funcionarios:funcionarios(Metodo, Fun_id),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(transacao/IdTranscao), api_transacao:transacao(Metodo, IdTranscao),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(vendas/IdVendas), api_vendas:vendas(Metodo, IdVendas),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(sangria/IdSangria), api_sangria:sangria(Metodo, IdSangria),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(cliente/IdCliente), api_cliente:cliente(Metodo, IdCliente),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(item/IdItem), api_item:item(Metodo, IdItem),
+                [ method(Metodo),
+                  methods([ get, post, put, delete ]) ]).
+                
+
 

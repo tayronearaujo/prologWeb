@@ -19,7 +19,14 @@
                 gabarito(boot5rest),   % Bootstrap 5 com API REST
                 frontend(entrada),
                 frontend(usuarios),
-                frontend(produtos)
+                frontend(produtos),
+                frontend(fluxoDeCaixa),
+                frontend(funcionarios),
+                frontend(transacao),
+                frontend(vendas),
+                frontend(sangria),
+                frontend(cliente),
+                frontend(item)
           
               ],
               [ silent(true),
@@ -30,7 +37,16 @@
 
 :- load_files([
                 api1(api_pessoas),
-                api1(api_produtos)
+                api1(api_produtos),
+                api1(api_fluxoDeCaixa),
+                api1(api_funcionarios),
+                api1(api_transacao),
+                api1(api_vendas),
+                api1(api_sangria),
+                api1(api_cliente),
+                api1(api_item)
+                
+
               ],
               [ silent(true),
                 if(not_loaded),

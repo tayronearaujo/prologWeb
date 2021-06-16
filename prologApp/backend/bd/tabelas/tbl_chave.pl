@@ -1,5 +1,12 @@
-created(1623730828.1078753).
+created(1623800655.584712).
 assert(chave(usuario,7)).
-assert(chave(pessoa,1)).
 assert(chave(idClientes,2)).
-assert(chave(idProdutos,1)).
+assert(chave(idProdutos,2)).
+assert(chave(pessoa,5)).
+assert(chave(funcionarios,4)).
+assert(chave(fluxoDeCaixa,9)).
+assert(chave(idTranscao,3)).
+assert(chave(idVendas,4)).
+assert(chave(idSangria,1)).
+assert(chave(idCliente,1)).
+assert(chave(idItem,1)).

@@ -7,6 +7,15 @@
 
 :- use_module(bd(pessoas), []).
 :- use_module(bd(produtos), []).
+:- use_module(bd(fluxoDeCaixa), []).
+:- use_module(bd(funcionarios), []).
+:- use_module(bd(transacao), []).
+:- use_module(bd(vendas), []).
+:- use_module(bd(sangria), []).
+:- use_module(bd(cliente), []).
+:- use_module(bd(item), []).
+
+
 
 
 entrada(_Pedido) :-
@@ -18,7 +27,18 @@ entrada(_Pedido) :-
                 nav(class(['nav','flex-column']),
                     [ 
                         \link_pessoas(1),
-                        \link_produtos(1)
+                        \link_produtos(1),
+                        \link_fluxoDeCaixa(1),
+                        \link_funcionarios(1),
+                        \link_transacao(1),
+                        \link_vendas(1),
+                        \link_sangria(1),
+                        \link_cliente(1),
+                        \link_item(1)
+                        
+
+                        
+                        
             
                     ])
                 ])
@@ -38,12 +58,48 @@ campo(Nome,Rotulo,Tipo) -->
 link_pessoas(1) -->
     html(a([ class(['nav-link']),
             href('/pessoas')],
-        'Cadastro pessoas')).
+        'Cadastro de pessoas')).
 
 link_produtos(1) -->
     html(a([ class(['nav-link']),
             href('/produtos')],
-        'Cadastro produtos')).
+        'Cadastro de produtos')).
+
+link_fluxoDeCaixa(1) -->
+        html(a([ class(['nav-link']),
+                href('/fluxoDeCaixa')],
+            'Fluxo de Caixa')).
+
+link_funcionarios(1) -->
+            html(a([ class(['nav-link']),
+                    href('/funcionarios')],
+                'Cadastro de funcionarios')).
+
+ link_transacao(1) -->
+                html(a([ class(['nav-link']),
+                        href('/transacao')],
+                    'Registro de transacao')).
+
+link_vendas(1) -->
+                    html(a([ class(['nav-link']),
+                            href('/vendas')],
+                        'Registro de vendas')).
+
+link_sangria(1) -->
+                        html(a([ class(['nav-link']),
+                                href('/sangria')],
+                            'Registro de sangria')).
+
+link_cliente(1) -->
+                            html(a([ class(['nav-link']),
+                                    href('/cliente')],
+                                'Cadastro de cliente')).
+
+link_item(1) -->
+                                html(a([ class(['nav-link']),
+                                        href('/item')],
+                                    'Cadastro de intens')).
+
 
 
 enviar_ou_cancelar(RotaDeRetorno) -->
