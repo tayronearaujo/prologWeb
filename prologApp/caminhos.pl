@@ -14,7 +14,7 @@
 % Por exemplo: se o projeto bookmarks está em '/home/pedro/bookmarks'
 %          então o caminho até o diretório do projeto é '/home/pedro'
 
-user:file_search_path(dir_base, 'C:/Users/SAMSUNG/Desktop/Trabalho prolog/prologWeb').
+user:file_search_path(dir_base, '/home/tayrone/Documentos/prologWeb').
 %user:file_search_path(dir_base, 'C:/Trabalho_Prolog/Trabalho_Prolog/TrabalhoApliCADO').
 
 

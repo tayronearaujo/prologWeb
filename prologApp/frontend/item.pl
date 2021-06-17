@@ -25,8 +25,7 @@ reply_html_page(
         [ div(class(container),
         [ \html_requires(js('bookmark.js')),
            h1('Cadastro de item'),
-           \form_item
-                              
+           \form_item                  
          ]) ]).
               
 

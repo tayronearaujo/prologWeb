@@ -41,12 +41,12 @@ cabecalho -->
  html(thead(tr([ th([scope(col)], '#'),
                  th([scope(col)], 'Nome'),
                  th([scope(col)], 'End'),
-                 th([scope(col)], 'telefone'),
-                 th([scope(col)], 'bairro'),
+                 th([scope(col)], 'Telefone'),
+                 th([scope(col)], 'Bairro'),
                  th([scope(col)], 'CPF'),
                  th([scope(col)], 'Id'),
                  th([scope(col)], 'complemento'),
-                th([scope(col)], 'Acoes')
+                th([scope(col)], 'Ações')
                ]))).
 
 corpo_tabela(RotaDeRetorno) -->

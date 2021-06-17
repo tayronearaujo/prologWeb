@@ -2,6 +2,8 @@
     login,
     [ login/1 ]).
 
+:-encoding(utf8).
+
 /* html//1, reply_html_page  */
 :- use_module(library(http/html_write)).
 /* html_requires  */
@@ -36,14 +38,12 @@ form_login -->
      ).
 
 formulario_login -->
- html(form([ class('p-3 rounded'),
-             method('POST'),
-             action('/valida_login')],
+ html(div([ class('p-3 rounded')],
            [ \mensagem,
              \campo(email, 'E-mail', email),
              \campo(senha,'Senha', password),
              \selecao(funcao),
-             \enviar_ou_cancelar('/')
+             \enviar_ou_cancelar('/entrada')
             ])).
 
 mensagem -->
@@ -61,9 +61,9 @@ selecao(Nome) -->
  html(div(class('mx-auto py-3 w-50'),
                 select([class('form-select border-0 mb-3'),
                         name(Nome),
-                        'aria-label'('Selecione tipo do usuÃ¡rio')],
+                        'aria-label'('Selecione tipo do usuário')],
                        [ option([ selected(selected), value('')],
-                               'Tipo de usuÃ¡rio:'),
+                               'Tipo de usuário:'),
                          option( value(admin),     'Administrador'),
                          option( value(usuario), 'Usuario')
                          
@@ -75,8 +75,8 @@ metodo_de_envio(Metodo) -->
 
 enviar_ou_cancelar(RotaDeRetorno) -->
  html(div([ class('btn-group'), role(group), 'aria-label'('Enviar ou cancelar')],
-          [ button([ type(submit),
-                     class('btn btn-outline-primary')], 'Enviar'),
-            a([ href(RotaDeRetorno),
+          [ a([ href(RotaDeRetorno),
+            class('btn btn-outline-primary')], 'Enviar'),
+            a([ href('/'),
                 class('ms-3 btn btn-outline-danger')], 'Cancelar')
          ])).

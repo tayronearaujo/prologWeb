@@ -57,8 +57,6 @@ apelido_rota(Apelido, RotaCompleta):-
 :- http_handler( root(entrada), entrada,   []).
 
 
-
-
 %:- http_handler( root(.), entrada,   []).
 
 %% A página de cadastro de novos bookmarks
@@ -66,6 +64,8 @@ apelido_rota(Apelido, RotaCompleta):-
  */
 %%pagina de cadastro
 :- http_handler(root(pessoas), pessoas , []).
+
+
 :- http_handler(root(produtos), produtos , []).
 :- http_handler(root(fluxoDeCaixa), fluxoDeCaixa , []).
 :- http_handler(root(funcionarios), funcionarios , []).
@@ -74,7 +74,7 @@ apelido_rota(Apelido, RotaCompleta):-
 :- http_handler(root(sangria), sangria, []).
 :- http_handler(root(cliente), cliente, []).
 :- http_handler(root(item), item, []).
-:- http_handler( root(valida_login), entrada, []).
+:- http_handler( root(entrada), entrada, []).
 :- http_handler( root(form_item), item:formulario, []).
 :- http_handler( root(form_cliente), cliente:formulario2, []).
 :- http_handler( root(form_fluxoDeCaixa), fluxoDeCaixa:formulario3, []).
@@ -84,20 +84,6 @@ apelido_rota(Apelido, RotaCompleta):-
 :- http_handler( root(form_sangria), sangria:formulario5, []).
 :- http_handler( root(form_transacao), transaco:formulario6, []).
 :- http_handler( root(form_vendas), vendas:formulario8, []).
-
-
-
-% Rotas do Backend
-
-% Validasao de login
-%:- http_handler( root(valida_login), logins:valida(Metodo),
-                % [ method(Metodo) ]).
-
-
-
-
-
-
 
 
 % Rotas API

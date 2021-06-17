@@ -31,7 +31,6 @@
                 frontend(pag_cadastro),
                 frontend(menu_topo),
                 frontend(icones)
-          
               ],
               [ silent(true),
                 if(not_loaded) ]).
@@ -50,8 +49,6 @@
                 api1(api_cliente),
                 api1(api_item),
                 api1(api_usuarios)
-                
-
               ],
               [ silent(true),
                 if(not_loaded),

@@ -16,8 +16,6 @@
 :- use_module(bd(item), []).
 
 
-
-
 entrada(_Pedido) :-
     reply_html_page(
         bootstrap5,
@@ -34,12 +32,7 @@ entrada(_Pedido) :-
                         \link_vendas(1),
                         \link_sangria(1),
                         \link_cliente(1),
-                        \link_item(1)
-                        
-
-                        
-                        
-            
+                        \link_item(1)           
                     ])
                 ])
         ]).
@@ -112,3 +105,4 @@ enviar_ou_cancelar(RotaDeRetorno) -->
 
 metodo_de_envio(Metodo) -->
     html(input([type(hidden), name('_metodo'), value(Metodo)])).
+

@@ -17,9 +17,7 @@ pessoas(_Pedido):-
                 h1('Aqui estao todas as pessoas'),
               \tab_pessoas(RotaDeRetorno)
               ]) ]).
-
-
-
+            
 formulario7(_Pedido):- 
               reply_html_page(
                       boot5rest,
@@ -43,7 +41,8 @@ form_usuarios -->
                 \campo('cpf','Cpf:',text),
                 \campo('identidade','Identidade:',text),
                 \campo('complemento','Complemento:',text),
-                \enviar_ou_cancelar('/')
+                \enviar_ou_cancelar('/entrada')
               ])).
+
 
 

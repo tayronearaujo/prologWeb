@@ -35,7 +35,7 @@ form_fluxoDeCaixa -->
                 onsubmit("redirecionaResposta( event, '/' )"),
                 action('/api/v1/fluxoDeCaixa/') ],
               [ \metodo_de_envio('POST'),
-                \campo(numeroTransacao,'NÃºmero TransaÃ§Ã£o:',text),
+                \campo(numeroTransacao,'Número Transação:',text),
                 \campo(valor,'Valor:',text),
                 \enviar_ou_cancelar('/')
               ])).
